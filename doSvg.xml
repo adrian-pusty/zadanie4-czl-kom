@@ -33,20 +33,9 @@
 		<xsl:variable name="pri" select="price"/>
 		<xsl:variable name="titleLength" select="8 * string-length(title)"/>
 		
-    <rect x="{100*position() - 200}" y="{150- $pag}" width="100" 
-	  height="{$pag}" fill="red" stroke="black"/>
-	  <text x="{100*position() - 200}" y="{150 + 15}" width="100"><xsl:value-of select="title"/></text> 
-  </xsl:template>
-  
-  <xsl:template match="Zadanie3/Książki_Poniżej500_stron/book">
-		<xsl:variable name="pag" select="pages div 10"/>
-		<xsl:variable name="rat" select="rating"/>
-		<xsl:variable name="pri" select="price"/>
-		<xsl:variable name="titleLength" select="8 * string-length(title)"/>
+	<text x="25"  y="{25*position() - 10}" height="25"><xsl:value-of select="substring(concat(title,  '                             X'), 0, 35)"/></text>
+	<rect x="225" y="{25*position() - 25}" height="15" width="{$pag}" fill="red" stroke="black"/>
 		
-    <rect x="{100*position() - 200}" y="{350- $pag}" width="100" 
-	  height="{$pag}" fill="red" stroke="black"/>
-	  <text x="{100*position() - 200}" y="{350 + 15}" width="100"><xsl:value-of select="title"/></text> 
   </xsl:template>
   
 </xsl:stylesheet>
