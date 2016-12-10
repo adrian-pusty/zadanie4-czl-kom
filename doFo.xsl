@@ -14,13 +14,17 @@
 			</fo:simple-page-master>
 		</fo:layout-master-set>
 		
-		<fo:page-sequence master-reference="A4">	
-			<fo:flow flow-name="xsl-region-body"> 
-				<fo:block font-weight="bold" font-family="Helvetica" font-size="14pt" space-after="5mm">Ksiazki powyzej 500 stron: </fo:block>		
+		<fo:page-sequence master-reference="A4">
+			<fo:static-content flow-name="xsl-region-after">
+				<fo:block text-align="end" font-size="8pt"> Strona numer : <fo:page-number/>
+				</fo:block>
+			</fo:static-content>	
+			<fo:flow flow-name="xsl-region-body" font-family="Arial"> 
+				<fo:block font-weight="bold" font-family="Arial" font-size="14pt" space-after="5mm">Książki powyżej 500 stron: </fo:block>		
 				<xsl:for-each select="Zadanie3/Książki_Powyżej500_stron/book">
 					<fo:list-block space-after="20mm">
 					<fo:list-item>
-						<fo:list-item-label> <fo:block>Tytul: </fo:block></fo:list-item-label> 
+						<fo:list-item-label flow-name="xsl-region-before"> <fo:block>Tytuł: </fo:block></fo:list-item-label> 
 						<fo:list-item-body><fo:block margin-left="5em"><xsl:value-of select="title"/></fo:block> </fo:list-item-body>
 					</fo:list-item> 
 					<fo:list-item>
@@ -29,11 +33,11 @@
 					</fo:list-item> 
 				</fo:list-block>
 				</xsl:for-each>	
-				<fo:block font-weight="bold" font-family="Helvetica" font-size="14pt" space-after="5mm">Ksiazki ponizej 500 stron: </fo:block>		
+				<fo:block font-weight="bold" font-family="Arial" font-size="14pt" space-after="5mm">Książki poniżej 500 stron: </fo:block>		
 				<xsl:for-each select="Zadanie3/Książki_Poniżej500_stron/book">
 					<fo:list-block space-after="20mm">
 					<fo:list-item>
-						<fo:list-item-label> <fo:block>Tytul: </fo:block></fo:list-item-label> 
+						<fo:list-item-label> <fo:block>Tytuł: </fo:block></fo:list-item-label> 
 						<fo:list-item-body><fo:block margin-left="5em"><xsl:value-of select="title"/></fo:block> </fo:list-item-body>
 					</fo:list-item> 
 					<fo:list-item>
