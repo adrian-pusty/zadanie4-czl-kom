@@ -1,16 +1,35 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="800">
+	<script type="text/javascript">
+				
+				function changeWidth(evt) {
+				var k = document.getElementById(evt);
+				if ('beginElement' in k) {
+					k.beginElement();}
+				}
+				// 
+			</script>
 	
-		<text x="25" y="40" height="25">Cmentarz w Pradze                 </text>
-	<rect x="225" y="25" height="15" width="50.4" fill="red" stroke="black"/>
-		<text x="25" y="90" height="25">Zrozumiec programowanie           </text>
-	<rect x="225" y="75" height="15" width="62" fill="red" stroke="black"/>
-		<text x="25" y="140" height="25">Symfonia C++                      </text>
-	<rect x="225" y="125" height="15" width="109.4" fill="red" stroke="black"/>
-		<text x="25" y="190" height="25">Kuchnia polska                    </text>
-	<rect x="225" y="175" height="15" width="73.6" fill="red" stroke="black"/>
-		<text x="25" y="240" height="25">Thinking in Java                  </text>
-	<rect x="225" y="225" height="15" width="125.6" fill="red" stroke="black"/>
+		<text x="25" y="40" height="25" onclick="changeWidth('ruch2')">Cmentarz w Pradze                 </text>
+	<rect id="bar2" x="225" y="25" height="15" width="0" fill="red" stroke="black">
+		<animate id="ruch2" xlink:href="#bar2" attributeName="width" from="0" to="50.4" dur="2s" begin="indefinite" fill="freeze"/>
+	</rect>
+		<text x="25" y="90" height="25" onclick="changeWidth('ruch4')">Zrozumiec programowanie           </text>
+	<rect id="bar4" x="225" y="75" height="15" width="0" fill="red" stroke="black">
+		<animate id="ruch4" xlink:href="#bar4" attributeName="width" from="0" to="62" dur="2s" begin="indefinite" fill="freeze"/>
+	</rect>
+		<text x="25" y="140" height="25" onclick="changeWidth('ruch6')">Symfonia C++                      </text>
+	<rect id="bar6" x="225" y="125" height="15" width="0" fill="red" stroke="black">
+		<animate id="ruch6" xlink:href="#bar6" attributeName="width" from="0" to="109.4" dur="2s" begin="indefinite" fill="freeze"/>
+	</rect>
+		<text x="25" y="190" height="25" onclick="changeWidth('ruch8')">Kuchnia polska                    </text>
+	<rect id="bar8" x="225" y="175" height="15" width="0" fill="red" stroke="black">
+		<animate id="ruch8" xlink:href="#bar8" attributeName="width" from="0" to="73.6" dur="2s" begin="indefinite" fill="freeze"/>
+	</rect>
+		<text x="25" y="240" height="25" onclick="changeWidth('ruch10')">Thinking in Java                  </text>
+	<rect id="bar10" x="225" y="225" height="15" width="0" fill="red" stroke="black">
+		<animate id="ruch10" xlink:href="#bar10" attributeName="width" from="0" to="125.6" dur="2s" begin="indefinite" fill="freeze"/>
+	</rect>
 	
 	
 		

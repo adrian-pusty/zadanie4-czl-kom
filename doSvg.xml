@@ -22,19 +22,46 @@
   
   <xsl:template match="/">
     <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" >
+			<script type="text/javascript">
+				<![CDATA[
+				function changeWidth(evt) {
+				var k = document.getElementById(evt);
+				if ('beginElement' in k) {
+					k.beginElement();}
+				}
+				// ]]>
+			</script>
       <!-- here we could draw a background rectangle -->
       <xsl:apply-templates/>
     </svg>
+    
+		
+    
   </xsl:template>
   
   <xsl:template match="Zadanie3/Książki_Powyżej500_stron/book">
+			
 		<xsl:variable name="pag" select="pages div 10"/>
 		<xsl:variable name="rat" select="rating"/>
 		<xsl:variable name="pri" select="price"/>
 		<xsl:variable name="titleLength" select="8 * string-length(title)"/>
 		
-	<text x="25"  y="{25*position() - 10}" height="25"><xsl:value-of select="substring(concat(title,  '                             X'), 0, 35)"/></text>
-	<rect x="225" y="{25*position() - 25}" height="15" width="{$pag}" fill="red" stroke="black"/>
+	
+	<xsl:variable name="bookPos" select="position()"/>
+	
+	<text x="25"  y="{25*position() - 10}" height="25" onclick="changeWidth('{concat('ruch', $bookPos)}')">
+	<xsl:value-of select="substring(concat(title,  '                             X'), 0, 35)" /></text>
+	<rect id="{concat('bar', $bookPos)}" x="225" y="{25*position() - 25}" height="15" width="0" fill="red" stroke="black">
+		   <animate 
+		   id="{concat('ruch', $bookPos)}"
+           xlink:href="#{concat('bar', $bookPos)}"
+           attributeName="width"
+           from="0"
+           to="{$pag}" 
+           dur="2s"
+           begin="indefinite"
+           fill="freeze"/>
+	</rect>
 		
   </xsl:template>
   
