@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
-<!-- keep all three namespaces, xlink may not be needed, but the others are -->
 <xsl:stylesheet version="1.0" 
 		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 		xmlns="http://www.w3.org/2000/svg"
 		>
-  
-  <!-- **** output/input configuration -->
   
   <xsl:output
       method="html"
@@ -15,13 +12,11 @@
       doctype-public="-//W3C//DTD SVG 1.1//EN"
       doctype-system="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
       media-type="image/svg" />
-  
-  <!-- must remove white spaces within the list element, 
-       otherwise count will not work -->
+      
   <xsl:strip-space elements="list"/>
   
   <xsl:template match="/">
-    <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2400" >
 			<script type="text/javascript">
 				<![CDATA[
 				function changeWidth(evt) {
@@ -31,30 +26,29 @@
 				}
 				// ]]>
 			</script>
-      <!-- here we could draw a background rectangle -->
+			<text x="25"  y="25">Tytul ksiazki:</text>
+			<text x="275" y="25">Ilosc stron:</text>
+			<text x="25"  y="{count(//book) * 26 + 100}">Wybierz numer ksiazki:</text>
       <xsl:apply-templates/>
     </svg>
-    
-		
-    
   </xsl:template>
   
-  <xsl:template match="Zadanie3/Książki_Powyżej500_stron/book">
+  <xsl:template match="book">
 			
-		<xsl:variable name="pag" select="pages div 10"/>
-		<xsl:variable name="rat" select="rating"/>
-		<xsl:variable name="pri" select="price"/>
-		<xsl:variable name="titleLength" select="8 * string-length(title)"/>
-		
+		<xsl:variable name="pag" select="pages div 5"/>
+		<!--<xsl:variable name="rat" select="rating"/>-->
+		<!--<xsl:variable name="pri" select="price"/>-->
+		<xsl:variable name="id" select="@id"/>
+		<!--<xsl:variable name="titleLength" select="8 * string-length(title)"/>-->
 	
-	<xsl:variable name="bookPos" select="position()"/>
-	
-	<text x="25"  y="{25*position() - 10}" height="25" onclick="changeWidth('{concat('ruch', $bookPos)}')">
-	<xsl:value-of select="substring(concat(title,  '                             X'), 0, 35)" /></text>
-	<rect id="{concat('bar', $bookPos)}" x="225" y="{25*position() - 25}" height="15" width="0" fill="red" stroke="black">
+	<text x="25"  y="{26*$id+50}" height="25" onclick="changeWidth('{concat('ruch1_', $id)}')">
+		<title><xsl:value-of select="genre"/></title>
+		<xsl:value-of select="substring(concat(title,  '                              '), 0, 35)" />
+	</text>
+	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="red" stroke="black">
 		   <animate 
-		   id="{concat('ruch', $bookPos)}"
-           xlink:href="#{concat('bar', $bookPos)}"
+		   id="{concat('ruch1_', $id)}"
+           xlink:href="#{concat('bar', $id)}"
            attributeName="width"
            from="0"
            to="{$pag}" 
@@ -62,7 +56,11 @@
            begin="indefinite"
            fill="freeze"/>
 	</rect>
+	<a xlink:href="#{concat('bar', $id)}">
+		<text x="{$id * 25}" y="{count(//book) * 26 + 125}" ><xsl:value-of select="@id"/></text>
+	</a>
 		
   </xsl:template>
+  
   
 </xsl:stylesheet>
