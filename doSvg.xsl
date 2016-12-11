@@ -29,11 +29,12 @@
 				}
 
 				function showLabels(){
-					var k = document.getElementById(numOfPages);
-					if(k.opacity == "1")k.opacity = "0";
+					var k = document.getElementById('numOfPages');
+					if(k.style.opacity == "1")k.style.opacity = "0";
 					else{
-						k.opacity = k.opacity = "1";
+						k.style.opacity = "1";
 					}  
+					console.log("showLabels");
 				}
 				// ]]>
 			</script>
@@ -50,7 +51,7 @@
     			</defs>
     		<rect width="{$documentWidth}" height="{$documentHeight}" fill="url(#grad1)" />
 			<text x="25"  y="25">Tytul ksiazki:</text>
-			<text x="275" y="25" onclick="showLabels(evt)">Ilosc stron:</text>
+			<text x="275" y="25" onclick="showLabels()">Ilosc stron:</text>
 			<text x="25"  y="{count(//book) * 26 + 100}">Wybierz numer ksiazki:</text>
       <xsl:apply-templates/>
     </svg>
@@ -68,7 +69,7 @@
 		<title><xsl:value-of select="genre"/></title>
 		<xsl:value-of select="substring(concat(title,  '                              '), 0, 35)" />
 	</text>
-	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="url(#grad2)" stroke="black" onclick="showLabels()">
+	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="url(#grad2)" stroke="black">
 		   <animate 
 		   id="{concat('ruch1_', $id)}"
            xlink:href="#{concat('bar', $id)}"
@@ -79,7 +80,7 @@
            begin="indefinite"
            fill="freeze"/>
 	</rect>
-	<text id="numOfPages" x="550"  y="{26*$id+50}" opacity="0"><xsl:value-of select="pages" /></text>
+	<text id="numOfPages" x="550"  y="{26*$id+50}" opacity="0.0"><xsl:value-of select="pages" /></text>
 	<a xlink:href="#{concat('bar', $id)}">
 		<text x="{$id * 25}" y="{count(//book) * 26 + 125}" ><xsl:value-of select="@id"/></text>
 	</a>
