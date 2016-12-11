@@ -14,7 +14,7 @@
       doctype-public="-//W3C//DTD SVG 1.1//EN"
       doctype-system="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
       media-type="image/svg" />
-  <xsl:variable name="documentHeight">1280</xsl:variable>
+  <xsl:variable name="documentHeight">1500</xsl:variable>
   <xsl:variable name="documentWidth">1200</xsl:variable>
       
   <xsl:strip-space elements="list"/>
