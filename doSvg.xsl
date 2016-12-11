@@ -12,11 +12,13 @@
       doctype-public="-//W3C//DTD SVG 1.1//EN"
       doctype-system="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
       media-type="image/svg" />
+  <xsl:variable name="documentHeight">1280</xsl:variable>
+  <xsl:variable name="documentWidth">1200</xsl:variable>
       
   <xsl:strip-space elements="list"/>
   
   <xsl:template match="/">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2400" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="{$documentWidth}" height="{$documentHeight}" >
 			<script type="text/javascript">
 				<![CDATA[
 				function changeWidth(evt) {
@@ -26,6 +28,14 @@
 				}
 				// ]]>
 			</script>
+			<!-- GRADIENT -->
+			    <defs>
+			        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+			            <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+			            <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+			        </linearGradient>
+    			</defs>
+    		<rect width="{$documentWidth}" height="{$documentHeight}" fill="url(#grad1)" />
 			<text x="25"  y="25">Tytul ksiazki:</text>
 			<text x="275" y="25">Ilosc stron:</text>
 			<text x="25"  y="{count(//book) * 26 + 100}">Wybierz numer ksiazki:</text>
@@ -41,11 +51,11 @@
 		<xsl:variable name="id" select="@id"/>
 		<!--<xsl:variable name="titleLength" select="8 * string-length(title)"/>-->
 	
-	<text x="25"  y="{26*$id+50}" height="25" onclick="changeWidth('{concat('ruch1_', $id)}')">
+	<text x="25"  y="{26*$id+50}" height="25" onmouseover="changeWidth('{concat('ruch1_', $id)}')">
 		<title><xsl:value-of select="genre"/></title>
 		<xsl:value-of select="substring(concat(title,  '                              '), 0, 35)" />
 	</text>
-	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="green" stroke="black">
+	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="rgb(255,106,0)" stroke="black">
 		   <animate 
 		   id="{concat('ruch1_', $id)}"
            xlink:href="#{concat('bar', $id)}"
