@@ -20,6 +20,7 @@
   
   <xsl:template match="/">
     <svg xmlns="http://www.w3.org/2000/svg" width="{$documentWidth}" height="{$documentHeight}" font-family="Arial">
+			<!--<xsl:variable name="numberOfBooks" select="count(//book)"/>-->
 			<script type="text/javascript">
 				<![CDATA[
 				function changeWidth(evt) {
@@ -29,12 +30,12 @@
 				}
 
 				function showLabels(){
-					var k = document.getElementById('numOfPages');
-					if(k.style.opacity == "1")k.style.opacity = "0";
-					else{
-						k.style.opacity = "1";
-					}  
+					for (i = 1; i < 21 + 1; i++) {
+						var k = document.getElementById(('numOfPages'.concat(i)));
+						if(k.style.opacity == "1") {k.style.opacity = "0";}
+						else {k.style.opacity = "1";}  
 					console.log("showLabels");
+					}
 				}
 				// ]]>
 			</script>
@@ -80,7 +81,7 @@
            begin="indefinite"
            fill="freeze"/>
 	</rect>
-	<text id="numOfPages" x="550"  y="{26*$id+50}" opacity="0.0"><xsl:value-of select="pages" /></text>
+	<text id="{concat('numOfPages', $id)}" x="550"  y="{26*$id+50}" opacity="0.0"><xsl:value-of select="pages" /></text>
 	<a xlink:href="#{concat('bar', $id)}">
 		<text x="{$id * 25}" y="{count(//book) * 26 + 125}" ><xsl:value-of select="@id"/></text>
 	</a>
