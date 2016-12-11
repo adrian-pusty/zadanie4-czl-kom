@@ -30,12 +30,13 @@
 					<fo:list-item>
 						<fo:list-item-label> <fo:block>Autor: </fo:block></fo:list-item-label> 
 						<fo:list-item-body><fo:block margin-left="5em"><xsl:value-of select="author"/></fo:block></fo:list-item-body>
-					</fo:list-item> 
+					</fo:list-item>
+					
 				</fo:list-block>
 				</xsl:for-each>	
 				<fo:block font-weight="bold" font-family="Arial" font-size="14pt" space-after="5mm">Książki poniżej 500 stron: </fo:block>		
 				<xsl:for-each select="Zadanie3/Książki_Poniżej500_stron/book">
-					<fo:list-block space-after="20mm">
+					<fo:list-block>
 					<fo:list-item>
 						<fo:list-item-label> <fo:block>Tytuł: </fo:block></fo:list-item-label> 
 						<fo:list-item-body><fo:block margin-left="5em"><xsl:value-of select="title"/></fo:block> </fo:list-item-body>
@@ -45,7 +46,36 @@
 						<fo:list-item-body><fo:block margin-left="5em"><xsl:value-of select="author"/></fo:block></fo:list-item-body>
 					</fo:list-item> 
 				</fo:list-block>
-				</xsl:for-each>	
+				<fo:table border="solid 2pt black" space-after="20mm">
+						<fo:table-column column-width="25mm"/>
+						<fo:table-column column-width="25mm"/>
+						<fo:table-header>
+						  <fo:table-row>
+						    <fo:table-cell>
+						      <fo:block font-weight="bold">Strony</fo:block>
+						    </fo:table-cell>
+						    <fo:table-cell>
+						      <fo:block font-weight="bold">Dział</fo:block>
+						    </fo:table-cell>
+						  </fo:table-row>
+						</fo:table-header>
+
+						<fo:table-body>
+						  <fo:table-row>
+						    <fo:table-cell>
+						      <fo:block><xsl:value-of select="pages"/></fo:block>
+						    </fo:table-cell>
+						    <fo:table-cell>
+						      <fo:block><xsl:value-of select="genre"/></fo:block>
+						    </fo:table-cell>
+						  </fo:table-row>
+						</fo:table-body>
+
+					</fo:table>
+				</xsl:for-each>
+				<xsl:for-each select="Zadanie3/Książki_Poniżej500_stron/book">
+					
+				</xsl:for-each>
 			</fo:flow>
 		</fo:page-sequence>
 	</fo:root>
