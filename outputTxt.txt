@@ -1,5 +1,45 @@
-Cmentarz w Pradze            Eco                504      Literatura zagraniczna       9.6 gwiazdek       25.35zł  5.83zł   
-Zrozumiec programowanie      Coldwind           620      Informatyka                  8.6 gwiazdek       47.00zł  10.81zł  
-Symfonia C++                 Grebosz            1094     Informatyka                  7.7 gwiazdek       65.99eur 15.18eur 
-Kuchnia polska               praca zbiorowa     736      Poradniki                    6.8 gwiazdek       4.29zł   0.99zł   
-Thinking in Java             Eckel              1256     Informatyka                  6.5 gwiazdek       83.21zł  19.14zł  
+Lista ksiazek:
+Tytul                                 Autor             Stron   Gatunek                   Ocena            Cena        W tym VAT   
+
+Cmentarz w Pradze                     Eco               504     Literatura zagraniczna    9.6 gwiazdek     25.35zł     5.83zł      
+Zrozumiec programowanie               Coldwind          620     Informatyka               8.6 gwiazdek     47.00zł     10.81zł     
+Symfonia C++                          Grebosz           1094    Informatyka               7.7 gwiazdek     65.99eur    15.18eur    
+Kuchnia polska                        praca zbiorowa    736     Poradniki                 6.8 gwiazdek     4.29zł      0.99zł      
+Thinking in Java                      Eckel             1256    Informatyka               6.5 gwiazdek     83.21zł     19.14zł     
+Blask fantastyczny                    Pratchett         236     Fantastyka                10.0 gwiazdek    17.06zł     3.92zł      
+UML 2.0                               Miles             230     Informatyka               9.8 gwiazdek     145.50zł    33.47zł     
+Kolor magii                           Pratchett         208     Fantastyka                9.7 gwiazdek     19.44zł     4.47zł      
+Czastki Przyciagania                  Hatalska          200     Finanse                   9.0 gwiazdek     62.98zł     14.49zł     
+Solaris                               Lem               340     Fantastyka                8.9 gwiazdek     22.69zł     5.22zł      
+Never Never                           Grzegorzewski     300     Literatura młodzieżowa    8.8 gwiazdek     25.94zł     5.97zł      
+Chateau de Sable                      Peeters           104     Komiks                    7.2 gwiazdek     23.09zł     5.31zł      
+X, tom 6                              Ohkawa            184     Komiks                    7.0 gwiazdek     18.85zł     4.34zł      
+Small Gods                            Pratchett         380     Fantastyka                6.8 gwiazdek     20.78zł     4.78zł      
+MORT: A Discworld Big Comic           Pratchett         94      Fantastyka                6.6 gwiazdek     28.00zł     6.44zł      
+Harry Potter i Kamień Filozoficzny    Rowling           328     Literatura dziecięca      6.5 gwiazdek     18.85zł     4.34zł      
+Harry Potter i Komnata Tajemnic       Rowling           368     Literatura dziecięca      6.0 gwiazdek     18.84zł     4.33zł      
+W pustyni i w puszczy                 Sienkiewicz       296     Literatura dziecięca      5.2 gwiazdek     2.54zł      0.58zł      
+Harry Potter i Przeklęte Dziecko      Rowling           320     Literatura dziecięca      5.0 gwiazdek     26.52zł     6.10zł      
+Myszy i ludzie                        Steinbeck         120     Literatura zagraniczna    3.7 gwiazdek     14.70zł     3.38zł      
+Mała zła czarownica                   Ctvrtek           73      Literatura dziecięca      2.3 gwiazdek     56.90zł     13.09zł     
+
+
+Lista autorow:
+Nazwisko                Narodowosc
+
+Grebosz                 Polak
+Eckel                   Amerykanin
+Coldwind                Szwajcar
+Miles                   Anglik
+Sienkiewicz             Polak
+praca zbiorowa          Inne
+Rowling                 Anglik
+Peeters                 Szwajcar
+Ctvrtek                 Inne
+Hatalska                Polak
+Ohkawa                  Inne
+Grzegorzewski           Polak
+Pratchett               Anglik
+Lem                     Polak
+Eco                     Inne
+Steinbeck               Amerykanin

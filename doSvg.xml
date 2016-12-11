@@ -45,7 +45,7 @@
 		<title><xsl:value-of select="genre"/></title>
 		<xsl:value-of select="substring(concat(title,  '                              '), 0, 35)" />
 	</text>
-	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="red" stroke="black">
+	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="green" stroke="black">
 		   <animate 
 		   id="{concat('ruch1_', $id)}"
            xlink:href="#{concat('bar', $id)}"
