@@ -34,6 +34,10 @@
 			            <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
 			            <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
 			        </linearGradient>
+			        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+			            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+			            <stop offset="100%" style="stop-color:rgb(255,50,0);stop-opacity:1" />
+			        </linearGradient>
     			</defs>
     		<rect width="{$documentWidth}" height="{$documentHeight}" fill="url(#grad1)" />
 			<text x="25"  y="25">Tytul ksiazki:</text>
@@ -55,7 +59,7 @@
 		<title><xsl:value-of select="genre"/></title>
 		<xsl:value-of select="substring(concat(title,  '                              '), 0, 35)" />
 	</text>
-	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="rgb(255,106,0)" stroke="black">
+	<rect id="{concat('bar', $id)}" x="275" y="{26*$id+35}" height="15" width="0" fill="url(#grad2)" stroke="black">
 		   <animate 
 		   id="{concat('ruch1_', $id)}"
            xlink:href="#{concat('bar', $id)}"
