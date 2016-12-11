@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="2.0" 
 		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		>
   
   <xsl:output
@@ -20,7 +21,6 @@
   
   <xsl:template match="/">
     <svg xmlns="http://www.w3.org/2000/svg" width="{$documentWidth}" height="{$documentHeight}" font-family="Arial">
-			<!--<xsl:variable name="numberOfBooks" select="count(//book)"/>-->
 			<script type="text/javascript">
 				<![CDATA[
 				function changeWidth(evt) {
@@ -29,8 +29,8 @@
 					k.beginElement();}
 				}
 
-				function showLabels(){
-					for (i = 1; i < 21 + 1; i++) {
+				function showLabels(n){
+					for (i = 1; i < n + 1; i++) {
 						var k = document.getElementById(('numOfPages'.concat(i)));
 						if(k.style.opacity == "1") {k.style.opacity = "0";}
 						else {k.style.opacity = "1";}  
@@ -52,7 +52,7 @@
     			</defs>
     		<rect width="{$documentWidth}" height="{$documentHeight}" fill="url(#grad1)" />
 			<text x="25"  y="25">Tytul ksiazki:</text>
-			<text x="275" y="25" onclick="showLabels()">Ilosc stron:</text>
+			<text x="275" y="25" onclick="showLabels({count(//book)})">Ilosc stron:</text>
 			<text x="25"  y="{count(//book) * 26 + 100}">Wybierz numer ksiazki:</text>
       <xsl:apply-templates/>
     </svg>
