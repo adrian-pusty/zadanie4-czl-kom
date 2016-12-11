@@ -29,7 +29,7 @@
 					k.beginElement();}
 				}
 
-				function showLabels(n){
+				function showLabels(var n){
 					for (i = 1; i < n + 1; i++) {
 						var k = document.getElementById(('numOfPages'.concat(i)));
 						if(k.style.opacity == "1") {k.style.opacity = "0";}
